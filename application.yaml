@@ -9,7 +9,7 @@ eureka:
 
 spring:
   application.name: product-service
-  config.import: configserver:http://localhost:9296 #app-name:address
+  #config.import: configserver:http://localhost:9296 #app-name:address
   main.banner_mode: 'off'
   output.ansi.enabled: always
   lifecycle.timeout-per-shutdown-phase: "20s"
