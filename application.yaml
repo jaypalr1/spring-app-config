@@ -6,3 +6,30 @@ eureka:
     register-with-eureka: true
     service-url:
       defaultZone: ${EUREKA_SERVER_ADDRESS:http://localhost:8761/eureka}
+
+springdoc:
+  show-actuator: true #Shows actuator endpoints in swagger ui
+
+server.shutdown: graceful
+
+management:
+  endpoints:
+    web:
+      base-path: "/"
+      path-mapping:
+        prometheus: "metrics"
+      exposure:
+        include: [ "health", "info", "prometheus", "openapi", "swagger-ui" ]
+  endpoint:
+    prometheus:
+      enabled: true
+    health:
+      show-details: always
+      show-components: always
+  health:
+    defaults:
+      enabled: true
+    livenessState:
+      enabled: true
+    readinessState:
+      enabled: true
